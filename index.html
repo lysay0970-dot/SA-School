@@ -350,7 +350,7 @@
 
             <div class="kpi-card card-warning">
               <div class="kpi-icon-box">
-                <i class="fa-solid fa-chart-line-up"></i>
+                <i class="fa-solid fa-chart-line"></i>
               </div>
               <div class="kpi-content">
                 <span class="kpi-title">មធ្យមភាគថ្នាក់ (ខែចុងក្រោយ)</span>
@@ -493,6 +493,9 @@
                 </select>
                 <button class="btn btn-primary btn-sm" id="addNewStudentModalBtn">
                   <i class="fa-solid fa-plus"></i> បន្ថែមសិស្សថ្មី
+                </button>
+                <button class="btn btn-outline-danger btn-sm" id="clearAllStudentsBtn" title="សម្អាតបញ្ជីសិស្សគំរូចាស់ទាំងអស់ចេញ">
+                  <i class="fa-solid fa-trash-can"></i> សម្អាតបញ្ជីសិស្ស
                 </button>
                 <button class="btn btn-success btn-sm" id="exportStudentsExcelBtn">
                   <i class="fa-solid fa-file-excel"></i> នាំចេញ Excel
@@ -994,7 +997,8 @@
                     <option value="top1">ចំណាត់ថ្នាក់លេខ ១</option>
                     <option value="top2">ចំណាត់ថ្នាក់លេខ ២</option>
                     <option value="top3">ចំណាត់ថ្នាក់លេខ ៣</option>
-                    <option value="top5">សិស្សឆ្នើមទាំង ៥ (លេខ ១ ដល់ ៥)</option>
+                    <option value="top4">ចំណាត់ថ្នាក់លេខ ៤</option>
+                    <option value="top5">ចំណាត់ថ្នាក់លេខ ៥</option>
                     <option value="all">សិស្សទាំងអស់</option>
                   </select>
                 </div>
@@ -1036,7 +1040,7 @@
                 <div class="honor-podium-cards" id="honorPodiumCards"></div>
 
                 <div class="honor-table-wrap">
-                  <h4 class="section-badge-title"><i class="fa-solid fa-medal"></i> តារាងចំណាត់ថ្នាក់សិស្សឆ្នើម Top 10</h4>
+                  <h4 class="section-badge-title" id="rptHonorTableTitle"><i class="fa-solid fa-medal"></i> តារាងចំណាត់ថ្នាក់សិស្សកិត្តិយសទាំង ៥ រូប (ចំណាត់ថ្នាក់ពីលេខ ១ ដល់លេខ ៥)</h4>
                   <table class="official-table">
                     <thead>
                       <tr>
@@ -3373,6 +3377,7 @@
   <div class="toast-container" id="toastContainer"></div>
 
   <!-- Scripts -->
+  <script src="/api/db.js"></script>
   <script src="data.js"></script>
   <script src="storage.js"></script>
   <script src="students.js"></script>
